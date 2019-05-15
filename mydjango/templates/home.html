@@ -1,4 +1,5 @@
 <h1>这是主页</h1>
 {% for gallery in gallerys.all %}
 {{ gallery.description }}
+<img src="{{ gallery.image.url }}">
 {% endfor %}
