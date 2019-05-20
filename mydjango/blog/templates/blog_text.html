@@ -1,1 +1,16 @@
-<h2>jkaljsd</h2>
+<style type="text/css">
+		pre{
+			white-space: pre-wrap;
+			word-wrap: break-word;
+		}
+</style>
+
+<div style="text-align:center;">
+	<h2>{{ blog.title }}</h2>
+	<h3>　　　　　　　　　　　　　　　　　　　　　{{ blog.date }}</h3>
+	<img src="{{blog.image.url}}" height=50%>
+</div>
+<br>
+<pre style="width:750px;font-size:150%;margin:20px auto;">
+{{ blog.text }}	
+</pre>
