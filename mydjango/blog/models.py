@@ -15,3 +15,15 @@ class Blog(models.Model):
 
     def short_text(self):
         return self.text[:100]
+
+
+class Person(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=20)
+    password = models.CharField(max_length=20)
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.id
+
+
