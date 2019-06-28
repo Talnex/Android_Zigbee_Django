@@ -1,16 +1,65 @@
-<style type="text/css">
+<html>
+<head>
+    <link rel="dns-prefetch" href="//cdn.bootcss.com"/>
+
+
+    <style type="text/css">
 		pre{
 			white-space: pre-wrap;
 			word-wrap: break-word;
 		}
-</style>
+    </style>
+</head>
+
+<body>
+
 
 <div style="text-align:center;">
-	<h2>{{ blog.title }}</h2>
-	<h3>　　　　　　　　　　　　　　　　　　　　　{{ blog.date }}</h3>
-	<img src="{{blog.image.url}}" height=50%>
+    <h2>{{ blog.title }}</h2>
+    <h3>　　　　　　　　　　　　　　　　　　　　　{{ blog.date }}</h3>
+    <img src="{{blog.image.url}}" height=50%>
 </div>
 <br>
-<pre style="width:750px;font-size:150%;margin:20px auto;">
-{{ blog.text }}	
-</pre>
+<div>
+    <style type="text/css">
+	.border-table {
+		border-collapse: collapse;
+		border: none;
+	}
+	.border-table td {
+		border: solid #000 1px;
+	}
+	.MathJax{outline:0;}
+
+    </style>
+
+    {{ blog.text|safe }}
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    showProcessingMessages: false,
+    messageStyle: "none",
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+        inlineMath:  [ ["$", "$"] ],
+        displayMath: [ ["$$","$$"] ],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'],
+        ignoreClass:"comment-content"
+    },
+    "HTML-CSS": {
+        availableFonts: ["STIX","TeX"],
+        showMathMenu: false
+    }
+});
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+
+
+
+
+    </script>
+    <script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</div>
+</body>
+</html>
+
