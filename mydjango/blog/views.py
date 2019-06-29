@@ -14,6 +14,6 @@ def blog_text(request, blog_id):  # blog_id 作为参数被传递到这个函数
     blog.text =  markdown.markdown(blog.text,
                                   extensions=[
                                      'markdown.extensions.extra',
-                                      'mdx_math',
+                                      'mdx_math'
                                   ])
     return render(request, 'blog_text.html', {'blog': blog})

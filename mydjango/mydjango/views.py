@@ -1,13 +1,14 @@
 from django.shortcuts import render
-from gallery.models import Gallery
+from gallery.models import UploadImage
 from blog.models import Person
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
 
+
 def home(request):
-    gallerys = Gallery.objects
+    gallerys = UploadImage.objects
     return render(request, 'home.html', {'gallerys': gallerys})
 
 

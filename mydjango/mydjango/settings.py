@@ -124,3 +124,11 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')#必须这么写
+
+WEB_HOST_NAME = '127.0.0.1:8000'
+
+WEB_IMAGE_SERVER_PATH = '/media/images/'
+
+IMAGE_SIZE_LIMIT = 10485760
+
+IMAGE_SAVING_PATH = '/Users/talnex/Documents/GitHub/Kraken/Android_Zigbee_Django/mydjango/media/images/'

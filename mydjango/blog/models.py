@@ -6,7 +6,7 @@ from django.db import models
 class Blog(models.Model):
 
     title = models.CharField(default='文章标题', max_length=50)
-    date = models.DateField()
+    author = models.CharField(default="神秘人",max_length=20)
     image = models.ImageField(default='default.png', upload_to='images/')
     text = models.TextField(default='正文')
 
