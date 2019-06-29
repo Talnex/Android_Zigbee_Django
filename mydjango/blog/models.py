@@ -5,6 +5,7 @@ from django.db import models
 
 class Blog(models.Model):
 
+    id = models.AutoField(primary_key=True)
     title = models.CharField(default='文章标题', max_length=50)
     author = models.CharField(default="神秘人",max_length=20)
     image = models.ImageField(default='default.png', upload_to='images/')

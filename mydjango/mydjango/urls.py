@@ -18,6 +18,7 @@ from django.urls import path, include
 
 import gallery.views
 from . import views
+import blog.views
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -25,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home),
     # path('blog/', blog.views.blog_page)
+    path("upload/blog",blog.views.uploadBlog),
     path("upload/image", gallery.views.uploadImage),
     path('blog/', include('blog.urls')),
     path('login', views.login),
