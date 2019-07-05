@@ -33,6 +33,7 @@ urlpatterns = [
     path("myadmin/",views.myadmin),
     path("myadmin/delate_user",views.delate_user),
     path("myadmin/delate_blog",views.delate_blog),
+    path("myadmin/change_user",views.change_user),
     path('blog/', include('blog.urls')),
     path('login', views.login),
     path('signup', views.signup),

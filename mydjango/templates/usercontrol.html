@@ -47,8 +47,15 @@
     {#    toastr.warning("只能选择一行进行编辑");#}
     {#    toastr.info("info");#}
 
-    function addElement(){
-        document.getElementById('test').value=num;
+    var selectid;
+
+    function addElement(id,email,name,password){
+        selectid = id;
+        document.getElementById('inputUseremail').value=email;
+        document.getElementById('inputUsername').value=name;
+        document.getElementById('inputPassword').value=password;
+        document.getElementById('singupform').action="change_user";
+        alert("点击提交");
     }
 
     function getCookie(name) {
@@ -192,7 +199,7 @@
                         <td>{{ auser.password }}</td>
                         <td> {{ auser.email }}</td>
                         <td>
-                            <strong><a href="#">修改</a></strong>
+                            <strong><a href="#" onclick="addElement({{ auser.id }},'{{ auser.email }}','{{ auser.name }}','{{ auser.password }}')">修改</a></strong>
                             <strong> <a href="#" onclick="deleteUser({{ auser.id }})">删除</a></strong>
                         </td>
                     </tr>

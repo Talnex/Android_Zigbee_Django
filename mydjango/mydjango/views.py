@@ -103,3 +103,14 @@ def delate_blog(request):
         return HttpResponse(json.dumps({
             "result": result
         }))
+
+@csrf_exempt
+def change_user(request):
+    email = request.POST.get('email')
+    name = request.POST.get('name')
+    password = request.POST.get('password')
+    person = Person.objects.get(email=email)
+    person.name = name
+    person.password = password
+    person.save()
+    return HttpResponse('success')
