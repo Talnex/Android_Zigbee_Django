@@ -17,6 +17,9 @@ class Blog(models.Model):
     def short_text(self):
         return self.text[:100]
 
+    class Meta:
+        ordering = ('-id',)
+
 
 class Person(models.Model):
     id = models.AutoField(primary_key=True)
@@ -26,5 +29,3 @@ class Person(models.Model):
 
     def __str__(self):
         return self.id
-
-

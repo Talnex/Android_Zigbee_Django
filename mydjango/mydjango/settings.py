@@ -132,3 +132,5 @@ WEB_IMAGE_SERVER_PATH = '/media/images/'
 IMAGE_SIZE_LIMIT = 10485760
 
 IMAGE_SAVING_PATH = '/Users/talnex/Documents/GitHub/Kraken/Android_Zigbee_Django/mydjango/media/images/'
+
+LOGIN_URL = '/myadmin/'

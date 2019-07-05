@@ -29,7 +29,9 @@ def uploadBlog(request):
     blog = models.Blog()
     blog.text = request.POST.get('text')
     blog.title = request.POST.get('title')
-    blog.author = request.POST.get('author')
+    email = request.POST.get('author')
+    res = models.Person.objects.get(email=email)
+    blog.author = res.name
     blog.image = request.FILES.get('img')
     blog.save()
-    return returnOk({"url": settings.WEB_HOST_NAME +'/'+ str(blog.id)})
+    return returnOk({"url": settings.WEB_HOST_NAME + blog.__str__()})
